@@ -59,7 +59,7 @@ function to_main_instructions2() {
     }
     $('body').prepend('<div id="main_instructions2" class="main_instructions_">' + text + '</div>');
     simple_transition_2($(".main_instructions_"), $("#main_instructions2"));
-    $("#next").attr('onclick', 'to_pre_input_reminder1()');
+    $("#next").attr('onclick', 'to_pre_input_reminder_1()');
     $("#back").attr('onclick', 'to_main_instructions1()');
 }
 
@@ -105,7 +105,7 @@ function to_main_instructions3() {
     }
     $('body').prepend('<div id="main_instructions2" class="main_instructions_">' + text + '</div>');
     simple_transition_2($(".main_instructions_"), $("#main_instructions2"));
-    $("#next").attr('onclick', 'to_pre_input_reminder2()');
+    $("#next").attr('onclick', 'to_pre_input_reminder_2()');
     $("#back").attr('onclick', 'to_main_instructions1()').hide();
   }
 }
