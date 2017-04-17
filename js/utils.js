@@ -329,8 +329,27 @@ function check_slider_2(classname) {
     }
 }
 
-function set_slider_true() {
-
+function check_slider_with_listener(classname) {
+    class_values = [];
+    score = 0;
+    classname.each(function() {
+        if ($(this).is(":visible")) {
+            class_values.push(this.moved);
+            score = $.inArray(undefined, class_values);
+        }
+    });
+    if (score != -1) {
+        var alert_msg;
+        if (conditions.cond_lang === 0) {
+            alert_msg = "Beweeg alsjeblieft de sliders om je keuzes aan te geven.";
+        } else if (conditions.cond_lang == 1) {
+            alert_msg = "Please move the sliders to indicate your choices.";
+        }
+        alert(alert_msg);
+        score = 0;
+    } else {
+        return true;
+    }
 }
 
 function get_unid() {
@@ -393,6 +412,29 @@ function validate_text(ID, desiredLength, test_kind, language) {
     }
 }
 
+function check_text_heading(ID, desiredLength) {
+    var alert_msg = "Please use at least " + desiredLength + " words for the heading of your review.";
+    var raw = ID.val().toLowerCase().split(/\s+/);
+    if (raw.length < desiredLength) {
+        alert(alert_msg);
+        length_prompt++;
+    } else {
+        return true;
+    }
+}
+
+function check_text_link(ID, desiredLength) {
+    var alert_msg = "Please provide a proper link to the Amazon product.";
+    var raw = ID.val();
+    if (raw.length < desiredLength) {
+        alert(alert_msg);
+        length_prompt++;
+    } else {
+        return true;
+    }
+}
+
+
 function check_input(ID, language) {
     var keywords;
     var tester_array = [];
@@ -429,7 +471,7 @@ function check_text(ID, desiredLength, language) {
     if (language === 0) {
         alert_msg = "Schrijf alsjeblieft ten minste " + desiredLength + " woorden om deze vraag te beantwoorden.";
     } else if (language == 1) {
-        alert_msg = "Please use at least " + desiredLength + " words to answer this questions.";
+        alert_msg = "Please use at least " + desiredLength + " words for the full text of your review.";
     }
     // var raw = ID.val().toLowerCase().replace(/ /g, '');
     var raw = ID.val().toLowerCase().split(/\s+/);
@@ -460,6 +502,20 @@ function record_elapsed_start(ID) {
 function record_elapsed_end(ID) {
     time2 = now();
     elapsed = time2 - time1;
+}
+
+function record_gaps(ID) {
+    var listen = true;
+    elapsed_arr = [];
+    var t0 = now();
+    ID.keydown(function(e) {
+        if (listen === true) {
+            var t1 = now();
+            var elapsed = t1 - t0;
+            elapsed_arr.push(elapsed.toFixed(2));
+            t0 = now();
+        }
+    });
 }
 
 
@@ -521,7 +577,7 @@ function set_planning_slider_value_2(number) {
 function set_manipulation_check1_slider_value() {
     var input = "#manipulation_check1_val";
     var output = "#manipulation_check1_output";
-    $(output).val($(input).val() + '%');
+    $(output).val($(input).val() + '%').hide();
 }
 
 function set_manipulation_check2_slider_value() {
@@ -533,9 +589,14 @@ function set_manipulation_check2_slider_value() {
 function set_manipulation_check3_slider_value() {
     var input = "#manipulation_check3_val";
     var output = "#manipulation_check3_output";
-    $(output).val($(input).val() + '%');
+    $(output).val($(input).val() + '%').hide();
 }
 
+function set_manipulation_check4_slider_value() {
+    var input = "#manipulation_check4_val";
+    var output = "#manipulation_check4_output";
+    $(output).val($(input).val() + '%');
+}
 
 
 function activate_stretch() {
@@ -552,18 +613,18 @@ function get_cond() {
     var cond_lang = 1;
     // 0: Dutch
     // 1: English
-    var cond_ver = randomdigit(0, 1);
-    // var cond_ver = 1;
-    // 0: truthful
-    // 1: deceptive
+    var valence = 0;
+    // 0: pos
+    // 1: neg
     var cb = randomdigit(0, 1);
     // var cb = 1;
-    // 0: past
-    // 1: future
+    // 0: pos first
+    // 1: dec first
     var conds = {
         'cond_lang': cond_lang,
-        'cond_ver': cond_ver,
-        'time': cb
+        // 'cond_ver': cond_ver,
+        'valence': valence,
+        'counterbal': cb
     };
     return conds;
 }
@@ -884,18 +945,47 @@ var now = (function() {
     return performance.now();
 });
 
-function collect_statement(ID) {
+function collect_statement(ID_heading, ID_text) {
     var elapsed = end_timer();
     var pagefocus = pagefocus_get_data();
-    var content = ID.val();
-    var length = get_length(ID);
+    var content_full = ID_text.val();
+    var length_full = get_length(ID_text);
+    var content_heading = ID_heading.val();
+    var length_heading = get_length(ID_heading);
     var deletes = recorded_deletes;
+    var gaps = elapsed_arr;
+    var gaps_proxy_100 = gaps.filter(function(x) {
+        return x > 100;
+    }).length;
+    var gaps_proxy_200 = gaps.filter(function(x) {
+        return x > 200;
+    }).length;
+    var gaps_proxy_300 = gaps.filter(function(x) {
+        return x > 300;
+    }).length;
+    var gaps_proxy_400 = gaps.filter(function(x) {
+        return x > 400;
+    }).length;
+    var gaps_proxy_500 = gaps.filter(function(x) {
+        return x > 500;
+    }).length;
+    var gap_init = gaps[0];
+    var gaps_n = gaps.length;
     var data = {
-        content: content,
+        content_full: content_full,
+        length_full: length_full,
+        content_heading: content_heading,
+        length_heading: length_heading,
         elapsed: elapsed,
         pagefocus: pagefocus,
-        length: length,
-        deletes: deletes
+        deletes: deletes,
+        gaps_100: gaps_proxy_100,
+        gaps_200: gaps_proxy_200,
+        gaps_300: gaps_proxy_300,
+        gaps_400: gaps_proxy_400,
+        gaps_500: gaps_proxy_500,
+        gap_init: gap_init,
+        gaps_n: gaps_n
     };
     return data;
 }

@@ -477,9 +477,10 @@ h2 {
     font-size: 1.1vw;
 }
 
+
 .text_input1 {
     border: 0.2vw solid white;
-    height: 60%;
+    height: 40%;
     width: 80%;
     margin: 0;
     position: absolute;
@@ -493,6 +494,40 @@ h2 {
     padding-right: 1%;
     padding-top: 1%;
 }
+
+.text_input1_heading {
+    border: 0.2vw solid white;
+    /*height: 10%;*/
+    width: 80%;
+    margin: 0;
+    position: absolute;
+    text-align: left;
+    font-size: 1.4vw;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+}
+.text_input1_link {
+    border: 0.2vw solid white;
+    /*height: 10%;*/
+    width: 70%;
+    margin: 0;
+    position: absolute;
+    text-align: left;
+    font-size: 1.2vw;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+}
+
 
 .text_input1_instr {
     height: 40%;
