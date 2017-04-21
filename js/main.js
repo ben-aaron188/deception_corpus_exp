@@ -65,26 +65,30 @@ function to_main_instructions2() {
     var input_link = '<textarea type="text" rows="3" cols="80" class="text_input1_link" id="link_input" placeholder="COPY & PASTE THE LINK HERE"></textarea>';
     $('body').prepend('<div id="main_instructions2" class="main_instructions_">' + text + provide_link + input_link + '</div>');
     simple_transition_2($(".main_instructions_"), $("#main_instructions2"));
-    $("#next").attr('onclick', 'to_pre_input_reminder_1()');
-    $("#back").attr('onclick', 'to_main_instructions1()');
+    // $("#next").attr('onclick', 'to_pre_input_reminder_1()');
+    // $("#back").attr('onclick', 'to_main_instructions1()');
+    $("#next").attr('onclick', 'to_statement_input1()');
 }
 
-function to_pre_input_reminder_1() {
-    if (check_text_link($("#link_input"), min_char_link) === true) {
-        block_copy_pasting();
-        var text;
-        if (conditions.counterbal === 0) {
-            text = pre_input_pos;
-        } else if (conditions.counterbal == 1) {
-            text = pre_input_neg;
-        }
-        $('body').prepend('<div id="pre_input_instructions1" class="main_instructions_">' + text + '</div>');
-        simple_transition_2($(".main_instructions_"), $("#pre_input_instructions1"));
-        $("#next").attr('onclick', 'to_statement_input1()');
-    }
-}
+// function to_pre_input_reminder_1() {
+//     if (check_text_link($("#link_input"), min_char_link) === true) {
+//         block_copy_pasting();
+//         var text;
+//         if (conditions.counterbal === 0) {
+//             text = pre_input_pos;
+//             debugger
+//         } else if (conditions.counterbal == 1) {
+//             text = pre_input_neg;
+//         }
+//         $('body').prepend('<div id="pre_input_instructions1" class="main_instructions_">' + text + '</div>');
+//         simple_transition_2($(".main_instructions_"), $("#pre_input_instructions1"));
+//         $("#next").attr('onclick', 'to_statement_input1()');
+//     }
+// }
 
 function to_statement_input1() {
+  if (check_text_link($("#link_input"), min_char_link) === true) {
+      block_copy_pasting();
     var text;
     if (conditions.valence === 0) {
         if (conditions.counterbal === 0) {
@@ -107,6 +111,7 @@ function to_statement_input1() {
     record_gaps($("#statement2"));
     simple_transition_2($(".main_instructions_"), $("#statement_input1"));
     $("#next").attr('onclick', 'to_pre_input_reminder_2()');
+  }
 }
 
 // function to_main_instructions3() {
@@ -133,12 +138,12 @@ function to_pre_input_reminder_2() {
         if (validate_text($("#statement1"), min_char, 'both', conditions.cond_lang) === true) {
             recorded_deletes = deletions_arr.length;
             statement1_main = collect_statement($("#statement1_heading"), $("#statement1"));
-            var text;
-            if (conditions.counterbal == 1) {
-                text = pre_input_pos;
-            } else if (conditions.counterbal === 0) {
-                text = pre_input_neg;
-            }
+            var text = transition_to_next;
+            // if (conditions.counterbal == 1) {
+            //     text = pre_input_pos;
+            // } else if (conditions.counterbal === 0) {
+            //     text = pre_input_neg;
+            // }
             $('body').prepend('<div id="pre_input_instructions2" class="main_instructions_">' + text + '</div>');
             simple_transition_2($(".main_instructions_"), $("#pre_input_instructions2"));
             $("#next").attr('onclick', 'to_statement_input2()');

@@ -616,7 +616,8 @@ h2 {
     width: 90%;
     margin: 0;
     position: absolute;
-    font-size: 0.95vw;
+    text-align: center;
+    font-size: 0.90vw;
     top: 80%;
     left: 50%;
     margin-right: -50%;
