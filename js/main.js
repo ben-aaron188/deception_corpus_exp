@@ -6,9 +6,9 @@ var repetition_count = 0;
 var conditions;
 var timer_ms1 = 60000;
 var timer_ms2 = 100;
-var min_char = 5;
-var min_char_heading = 3;
-var min_char_link = 20;
+var min_char = 20;
+var min_char_heading = 4;
+var min_char_link = 10;
 
 // add listener to input event
 function add_input_listener(classname) {

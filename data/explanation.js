@@ -6,17 +6,12 @@ var ic = ' <p><strong>Informed consent &amp; Information letter </strong></p> <p
 var transition_en = ' <p>The first part of the experiment is finished. Please fill in your details below.</p>';
 
 // manipulations
-var general_instructions1 = '<p>In this experiment, you are asked to write two product reviews.</p> <p>In the prolific prescreening, you indicated that you recently purchased an electronic device online. You rated that product as either very bad (1 star) or very good (5 stars). The reviews you will be writing are about that product. One of the reviews will be truthful and corresponds to your initial rating. For the other review, we ask you to imagine that you gave the product a rating which is opposite of your truthful rating (5 stars instead of 1 or vice versa). You will be asked to provide a link to the electronic device you purchased and to answer some general questions about reviews.</p> <p>Please follow the instructions carefully!</p>';
+var general_instructions1 = '<p>In this experiment, you are asked to write two product reviews.</p> <p>In the prolific prescreening, you indicated that you recently purchased an electronic device online. You rated that product as either very bad (1 star) or very good (5 stars).</br> The reviews you will be writing are about that product. One of the reviews will be truthful and corresponds to your initial rating. For the other review, we ask you to imagine that you gave the product a rating which is opposite of your truthful rating (5 stars instead of 1 or vice versa).</br> You will be asked to provide a link to the electronic device you purchased and to answer some general questions about reviews.</p> <p>Please follow the instructions carefully!</p>';
 
 var instructions_pos1 = '<p>Based on your prescreening on Prolific you indicated that you recently purchased an electronic device online and rated that product with 5 stars (i.e. very good).</p>';
 var instructions_neg1 = '<p>Based on your prescreening on Prolific you indicated that you recently purchased an electronic device online and rated that product with 1 star (i.e. very bad).</p>';
 
 var provide_link = 'Please provide a web-link of the product you wrote your reviews about in the following field. The link should lead to the online shop you purchased the product. If possible, provide an Amazon-link.';
-
-// var pre_input_pos_deceptive = "<p>Now imagine that you are very satisfied with the purchased product and give this product a 5-star (i.e. very good) rating, instead of your actual 1 star rating.</p>";
-// var pre_input_neg_deceptive = '<p>Now imagine that you are not satisfied with your purchased product and you give this product a 1 star (very bad) rating, instead of your actual 5 star rating.</p>';
-// var pre_input_pos_truthful = '<p>On the next screen you will be asked to write a review corresponding to your initial 5 star rating.</p>';
-// var pre_input_neg_truthful = '<p>On the next screen you will be asked to write a review corresponding to your initial 1 star rating.</p>';
 
 var transition_to_next = "You will now be asked to write a second but different review about the same product. Please follow the instructions on the next screen";
 
@@ -31,7 +26,7 @@ var instructions_inputfield_neg_deceptive = '<p>Please write a <u>fake, negative
 var manipulation_check_en = 'Thank you for providing your statement. For the validity of this research, it is important for us to know to whether you correctly understood your task, to what extent you wrote a truthful statement or not, and how motivated you were. Please answer the questions below honestly.</br><i>Scroll down to see all sliders.</i>';
 
 // outro
-var debriefing_en = 'In this study you were asked to write two reviews. One truthful and one deceptive review. In our study, we are going to investigate whether these reviews can be differentiated based on stylometric cues. This analysis will be conducted with a machine learning algorithm. The attained deception detection performance will be compared to human judges to explore the possibilities of automated machine learning in verbal deception detection.';
+var debriefing_en = 'In this study you were asked to write two reviews. One truthful and one deceptive review. In our study, we are going to investigate whether these reviews can be differentiated based on the your writing style.';
 
 var outro_en = 'Your participation code: <span id=partcode style="color: red">9871NO</span></br></br>' +
 	'<span id="debr">' + debriefing_en + '</span></br></br>' +
@@ -39,7 +34,7 @@ var outro_en = 'Your participation code: <span id=partcode style="color: red">98
 	// 'The allocation of extra 0.50GBP for believable statements will happen directly after we finished data collection. ' +
 	'If you have any questions about this study, please contact us via <a href="mailto:verbaldeceptiondetection@gmail.com?Subject=Online%20Experiment" target="_top">verbaldeceptiondetection@gmail.com</a>' +
 	'<input type="text" id="crowdf" name="crowdf" class="select_menu" maxlength="40" size="24" style="text-align: center; left: 25%; top: 85%; height: 10%; width: 25%;" placeholder="YOUR PROLIFIC ID">' +
-	'<input type="text" id="unidin" name="unidin" class="select_menu" maxlength="6" size="16" style="text-align: center; left: 75%; top: 85%; height: 10%; width: 25%; color: red" placeholder="YOUR PARTICIPATION CODE">';
+	'<input type="text" id="unidin" name="unidin" class="select_menu" maxlength="8" size="16" style="text-align: center; left: 75%; top: 85%; height: 10%; width: 25%; color: red" placeholder="YOUR PARTICIPATION CODE">';
 
 // credits
 var credits = '<div id="credits">' +
