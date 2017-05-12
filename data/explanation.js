@@ -11,7 +11,7 @@ var general_instructions1 = '<p>In this experiment, you are asked to write two p
 var instructions_pos1 = '<p>Based on your prescreening on Prolific you indicated that you recently purchased an electronic device online and rated that product with 5 stars (i.e. very good).</p>';
 var instructions_neg1 = '<p>Based on your prescreening on Prolific you indicated that you recently purchased an electronic device online and rated that product with 1 star (i.e. very bad).</p>';
 
-var provide_link = 'Please provide a web-link of the product you wrote your reviews about in the following field. The link should lead to the online shop you purchased the product. If possible, provide an Amazon-link.';
+var provide_link = 'Please provide a web-link to the product you wrote your reviews about in the following field. After you have looked up this product on Amazon, please paste the link here.';
 
 var transition_to_next = "You will now be asked to write a second but different review about the same product. Please follow the instructions on the next screen";
 
@@ -26,7 +26,7 @@ var instructions_inputfield_neg_deceptive = '<p>Please write a <u>fake, negative
 var manipulation_check_en = 'Thank you for providing your statement. For the validity of this research, it is important for us to know to whether you correctly understood your task, to what extent you wrote a truthful statement or not, and how motivated you were. Please answer the questions below honestly.</br><i>Scroll down to see all sliders.</i>';
 
 // outro
-var debriefing_en = 'In this study you were asked to write two reviews. One truthful and one deceptive review. In our study, we are going to investigate whether these reviews can be differentiated based on the your writing style.';
+var debriefing_en = 'In this study you were asked to write two reviews. One truthful and one deceptive review. In our study, we are going to investigate whether these reviews can be differentiated based on the writing style.';
 
 var outro_en = 'Your participation code: <span id=partcode style="color: red">9871NO</span></br></br>' +
 	'<span id="debr">' + debriefing_en + '</span></br></br>' +

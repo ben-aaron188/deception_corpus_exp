@@ -413,7 +413,8 @@ function validate_text(ID, desiredLength, test_kind, language) {
 }
 
 function check_text_heading(ID, desiredLength) {
-    var alert_msg = "Please use at least " + desiredLength + " words for the heading of your review.";
+    // var alert_msg = "Please use at least " + desiredLength + " words for the heading of your review.";
+    var alert_msg = "Please use more words for the heading of your heading.";
     var raw = ID.val().toLowerCase().split(/\s+/);
     if (raw.length < desiredLength) {
         alert(alert_msg);
@@ -471,7 +472,8 @@ function check_text(ID, desiredLength, language) {
     if (language === 0) {
         alert_msg = "Schrijf alsjeblieft ten minste " + desiredLength + " woorden om deze vraag te beantwoorden.";
     } else if (language == 1) {
-        alert_msg = "Please use at least " + desiredLength + " words for the full text of your review.";
+        // alert_msg = "Please use at least " + desiredLength + " words for the full text of your review.";
+        alert_msg = "Please use more words for your review.";
     }
     // var raw = ID.val().toLowerCase().replace(/ /g, '');
     var raw = ID.val().toLowerCase().split(/\s+/);
