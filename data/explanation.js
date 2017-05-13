@@ -16,10 +16,10 @@ var provide_link = 'Please provide a web-link to the product you wrote your revi
 var transition_to_next = "You will now be asked to write a second but different review about the same product. Please follow the instructions on the next screen";
 
 
-var instructions_inputfield_pos_truthful = '<p>Please write an <u>honest, positive review</u> about your purchased product according to your 5 star rating.</p> <p>The review will have to be at least 75 words and you will not be able to copy and paste text into the answer box.</p>';
-var instructions_inputfield_neg_truthful = '<p>Please write an <u>honest, negative review</u> about your purchased product according to your 1 star rating.</p> <p>The review will have to be at least 75 words and you will not be able to copy and paste text into the answer box.</p>';
-var instructions_inputfield_pos_deceptive = '<p>Please write a <u>fake, positive review</u> about your purchased product. This review should be a 5-star (i.e. a very positive) review of the product.</p> <p>The review will have to be at least 75 words and you will not be able to copy and paste text into the answer box.</p>';
-var instructions_inputfield_neg_deceptive = '<p>Please write a <u>fake, negative review</u> about your purchased product. This review should be a 1-star (i.e. a very negative) review of the product.</p> <p>The review will have to be at least 75 words and you will not be able to copy and paste text into the answer box.</p>';
+var instructions_inputfield_pos_truthful = '<p>Please write an <u>honest, positive review</u> about your purchased product according to your 5 star rating.</p> <p>You will not be able to copy and paste text into the answer box.</p>';
+var instructions_inputfield_neg_truthful = '<p>Please write an <u>honest, negative review</u> about your purchased product according to your 1 star rating.</p> <p>You will not be able to copy and paste text into the answer box.</p>';
+var instructions_inputfield_pos_deceptive = '<p>Please write a <u>fake, positive review</u> about your purchased product. This review should be a 5-star (i.e. a very positive) review of the product.</p> <p>You will not be able to copy and paste text into the answer box.</p>';
+var instructions_inputfield_neg_deceptive = '<p>Please write a <u>fake, negative review</u> about your purchased product. This review should be a 1-star (i.e. a very negative) review of the product.</p> <p>You will not be able to copy and paste text into the answer box.</p>';
 
 
 // manipulation check

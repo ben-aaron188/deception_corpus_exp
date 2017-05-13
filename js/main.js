@@ -7,7 +7,7 @@ var conditions;
 var timer_ms1 = 60000;
 var timer_ms2 = 100;
 var min_char = 50;
-var min_char_heading = 1;
+var min_char_heading = 2;
 var min_char_link = 20;
 
 // add listener to input event
@@ -309,16 +309,17 @@ function get_data() {
     data.manipulation_check3 = $("#manipulation_check3_val").val();
     data.manipulation_check4 = $("#manipulation_check4_val").val();
 
-    data.length_prompt_n = length_prompt;
-    data.language_prompt_n = language_prompt;
-    data.ms_prompt_n = ms_prompt;
+    data.heading_prompt_n = heading_prompt;
+    data.link_prompt_n = link_prompt;
+    data.review_length_prompt_n = review_length_prompt;
 
     data.statement1_content = statement1_main.content_full;
     data.statement1_heading = statement1_main.content_heading;
     data.statement1_defoucus = statement1_main.pagefocus.defocus;
     data.statement1_refoucus = statement1_main.pagefocus.refocus;
     data.statement1_defocusduration = statement1_main.pagefocus.durationsum;
-    data.statement1_length = statement1_main.length;
+    data.statement1_length_heading = statement1_main.length_heading;
+    data.statement1_length_full = statement1_main.length_full;
     data.statement1_elapsed = statement1_main.elapsed;
     data.statement1_deletes = statement1_main.deletes;
     data.statement1_deletes = statement1_main.deletes;
@@ -335,7 +336,8 @@ function get_data() {
     data.statement2_defoucus = statement2_main.pagefocus.defocus;
     data.statement2_refoucus = statement2_main.pagefocus.refocus;
     data.statement2_defocusduration = statement2_main.pagefocus.durationsum;
-    data.statement2_length = statement2_main.length;
+    data.statement2_length_heading = statement2_main.length_heading;
+    data.statement2_length_full = statement2_main.length_full;
     data.statement2_elapsed = statement2_main.elapsed;
     data.statement2_deletes = statement2_main.deletes;
     data.statement2_deletes = statement2_main.deletes;

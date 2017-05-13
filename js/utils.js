@@ -1,7 +1,7 @@
 var slider_moved_array = [];
-var length_prompt = 0;
-var language_prompt = 0;
-var ms_prompt = 0;
+var heading_prompt = 0;
+var link_prompt = 0;
+var review_length_prompt = 0;
 
 function check_fields(classname) {
     var class_values = [];
@@ -418,7 +418,7 @@ function check_text_heading(ID, desiredLength) {
     var raw = ID.val().toLowerCase().split(/\s+/);
     if (raw.length < desiredLength) {
         alert(alert_msg);
-        length_prompt++;
+        heading_prompt++;
     } else {
         return true;
     }
@@ -429,7 +429,7 @@ function check_text_link(ID, desiredLength) {
     var raw = ID.val();
     if (raw.length < desiredLength) {
         alert(alert_msg);
-        length_prompt++;
+        link_prompt++;
     } else {
         return true;
     }
@@ -480,7 +480,7 @@ function check_text(ID, desiredLength, language) {
     // $("#statement1").val().toLowerCase()
     if (raw.length < desiredLength) {
         alert(alert_msg);
-        length_prompt++;
+        review_length_prompt++;
     } else {
         return true;
     }
