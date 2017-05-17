@@ -107,8 +107,8 @@ function to_statement_input1() {
     var input_field_full = '<textarea type="text" rows="10" cols="80" class="text_input1" id="statement1" placeholder="TYPE YOUR REVIEW HERE"></textarea>';
     $('body').prepend('<div id="statement_input1" class="main_instructions_">' + text + input_field_heading + input_field_full + '</div>');
     start_timer();
-    record_deletes();
-    record_gaps($("#statement2"));
+    record_deletes($("#statement1"));
+    record_gaps($("#statement1"));
     simple_transition_2($(".main_instructions_"), $("#statement_input1"));
     $("#next").attr('onclick', 'to_pre_input_reminder_2()');
   }
@@ -170,7 +170,7 @@ function to_statement_input2() {
     var input_field_full = '<textarea type="text" rows="10" cols="80" class="text_input1" id="statement2" placeholder="TYPE YOUR REVIEW HERE"></textarea>';
     $('body').prepend('<div id="statement_input2" class="main_instructions_">' + text + input_field_heading + input_field_full + '</div>');
     start_timer();
-    record_deletes();
+    record_deletes($("#statement2"));
     record_gaps($("#statement2"));
     simple_transition_2($(".main_instructions_"), $("#statement_input2"));
     $("#next").attr('onclick', 'to_manipulation_check()');
@@ -308,6 +308,8 @@ function get_data() {
     data.manipulation_check2 = $("#manipulation_check2_val").val();
     data.manipulation_check3 = $("#manipulation_check3_val").val();
     data.manipulation_check4 = $("#manipulation_check4_val").val();
+
+    data.linkamazon = $("#link_input").val();
 
     data.heading_prompt_n = heading_prompt;
     data.link_prompt_n = link_prompt;

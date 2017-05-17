@@ -527,10 +527,10 @@ function get_length(ID) {
     return id_length;
 }
 
-function record_deletes() {
+function record_deletes(ID) {
     var listen = true;
     deletions_arr = [];
-    $("#statement1").keydown(function(e) {
+    ID.keydown(function(e) {
         if (listen === true) {
             var code = e.keyCode || e.which;
             if (code == 8) {
@@ -621,7 +621,7 @@ function get_cond() {
     var cb = randomdigit(0, 1);
     // var cb = 1;
     // 0: pos first
-    // 1: dec first
+    // 1: neg first
     var conds = {
         'cond_lang': cond_lang,
         // 'cond_ver': cond_ver,
