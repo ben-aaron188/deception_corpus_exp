@@ -480,13 +480,13 @@ h2 {
 
 .text_input1 {
     border: 0.2vw solid white;
-    height: 40%;
+    height: 30%;
     width: 80%;
     margin: 0;
     position: absolute;
     text-align: left;
     font-size: 1.2vw;
-    top: 60%;
+    top: 70%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -503,7 +503,7 @@ h2 {
     position: absolute;
     text-align: left;
     font-size: 1.4vw;
-    top: 30%;
+    top: 45%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
