@@ -227,7 +227,7 @@ function to_manipulation_check() {
         '<span class="manipulation_check_span" style="left: 50%;">' +
         '<div class="slider_io">' +
         '<span id="slider_instr">How long ago did you buy the product you provided the link for?</span> ' +
-        '<select id="time_product" class="select_menu">' +
+        '<select id="time_product" class="slider_io_slider select_menu">' +
         '<option value="">- Choose one -</option>' +
         '<option value="1">1 month ago</option>' +
         '<option value="2">2 months ago</option>' +
